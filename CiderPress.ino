@@ -1,77 +1,15 @@
-/*
- HC-SR04 Ping distance sensor:
- VCC to arduino 5v 
- GND to arduino GND
- Echo to Arduino pin 3 
- Trig to Arduino pin 4
- 
- This sketch originates from Virtualmix: http://goo.gl/kJ8Gl
- Has been modified by Winkle ink here: http://winkleink.blogspot.com.au/2012/05/arduino-hc-sr04-ultrasonic-distance.html
- And modified further by ScottC here: http://arduinobasics.blogspot.com.au/2012/11/arduinobasics-hc-sr04-ultrasonic-sensor.html
- on 10 Nov 2012.
- */
-
-
-#define echoPin 3 // Echo Pin
-#define trigPin 4 // Trigger Pin
-#define LEDPin 13 // Onboard LED
-
-int maximumRange = 200; // Maximum range needed
-int minimumRange = 0; // Minimum range needed
-long duration, distance; // Duration used to calculate distance
-
-//Dispaly
+#include "Arduino.h"
 #include <SoftwareSerial.h>
-SoftwareSerial Serial7Segment(8, 9); //RX pin, TX pin
+
+#include "CiderPress.h"
+CiderPress ciderPress;
 
 void setup() {
   Serial.begin (9600);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  pinMode(LEDPin, OUTPUT); // Use LED indicator (if required)
-
-  //Timer
-  Serial.println("Woot!");
-  
-  Serial7Segment.begin(9600); //Talk to the Serial7Segment at 9600 bps
-  Serial7Segment.write('v'); //Reset the display - this forces the cursor to return to the beginning of the display
+  ciderPress.init();
 }
 
 void loop() {
-/* The following trigPin/echoPin cycle is used to determine the
- distance of the nearest object by bouncing soundwaves off of it. */ 
- digitalWrite(trigPin, LOW); 
- delayMicroseconds(2); 
 
- digitalWrite(trigPin, HIGH);
- delayMicroseconds(10); 
- 
- digitalWrite(trigPin, LOW);
- duration = pulseIn(echoPin, HIGH);
- 
- //Calculate the distance (in cm) based on the speed of sound.
- distance = duration/58.2;
- 
- if (distance >= maximumRange || distance <= minimumRange){
-   /* Send a negative number to computer and Turn LED ON 
-   to indicate "out of range" */
-   Serial.println("-1");
-   digitalWrite(LEDPin, HIGH); 
- }
- else {
-
-   int c = distance;
-   char tempString[10]; //Used for sprintf
-   sprintf(tempString, "%4d", c); //Convert deciSecond into a string that is right adjusted
-   Serial7Segment.print(tempString); //Send serial string out the soft serial port to the S7S
-
-   /* Send the distance to the computer using Serial protocol, and
-   turn LED OFF to indicate successful reading. */
-   Serial.println(distance);
-   digitalWrite(LEDPin, LOW); 
-
- }
- 
- //Delay 50ms before next reading.
- delay(50);
+  ciderPress.run();
 }
