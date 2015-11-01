@@ -18503,8 +18503,8 @@ Source: http://www.osram.convergy.de/</description>
 <part name="JP12" library="SparkFun-Connectors" deviceset="M04" device="JST-PTH"/>
 <part name="GND6" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND9" library="SparkFun" deviceset="GND" device=""/>
-<part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="KIT2"/>
-<part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="KIT2" value="1N4001"/>
+<part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="RAW"/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
@@ -18521,6 +18521,9 @@ Source: http://www.osram.convergy.de/</description>
 <part name="S3" library="Testing" deviceset="SWITCH-MOMENTARY-2" device="SMD-ALT01" value="SWL"/>
 <part name="JP10" library="SparkFun-Connectors" deviceset="M03" device="JST-PTH"/>
 <part name="GND13" library="SparkFun" deviceset="GND" device=""/>
+<part name="JP11" library="SparkFun-Connectors" deviceset="M04" device="JST-PTH"/>
+<part name="SUPPLY8" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18540,6 +18543,7 @@ Source: http://www.osram.convergy.de/</description>
 <text x="119.38" y="127" size="1.778" layer="97">HC-SR04 (Distance Sensor)</text>
 <text x="58.42" y="121.92" size="1.778" layer="97">IR Sensor</text>
 <text x="93.98" y="139.7" size="1.778" layer="97">Inline Solenoid</text>
+<text x="104.14" y="91.44" size="1.778" layer="97">4x7 Segment Display</text>
 </plain>
 <instances>
 <instance part="C10" gate="G$1" x="83.82" y="157.48"/>
@@ -18626,6 +18630,9 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="S3" gate="G$1" x="208.28" y="68.58"/>
 <instance part="JP10" gate="G$1" x="68.58" y="76.2"/>
 <instance part="GND13" gate="1" x="78.74" y="68.58"/>
+<instance part="JP11" gate="G$1" x="119.38" y="78.74" rot="R180"/>
+<instance part="SUPPLY8" gate="G$1" x="111.76" y="83.82"/>
+<instance part="GND14" gate="1" x="111.76" y="68.58"/>
 </instances>
 <busses>
 </busses>
@@ -18758,6 +18765,12 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="GND13" gate="1" pin="GND"/>
 <wire x1="76.2" y1="76.2" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="76.2" x2="78.74" y2="71.12" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP11" gate="G$1" pin="4"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+<wire x1="114.3" y1="73.66" x2="111.76" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="73.66" x2="111.76" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="AREF" class="0">
@@ -18905,16 +18918,6 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="D1" gate="G$1" pin="C"/>
-<wire x1="106.68" y1="124.46" x2="106.68" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="129.54" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="129.54" x2="101.6" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
-<pinref part="JP9" gate="G$1" pin="2"/>
-<wire x1="101.6" y1="124.46" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
-<junction x="101.6" y="129.54"/>
-</segment>
-<segment>
 <wire x1="132.08" y1="119.38" x2="132.08" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
 <pinref part="JP12" gate="G$1" pin="1"/>
@@ -18935,6 +18938,12 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="193.04" y1="78.74" x2="193.04" y2="76.2" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="JP11" gate="G$1" pin="3"/>
+<pinref part="SUPPLY8" gate="G$1" pin="VCC"/>
+<wire x1="114.3" y1="76.2" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="76.2" x2="111.76" y2="83.82" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="RAW" class="1">
 <segment>
@@ -18953,39 +18962,32 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="JP6" gate="G$1" pin="1"/>
 <label x="40.64" y="88.9" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-</net>
-<net name="D9" class="0">
 <segment>
-<wire x1="20.32" y1="60.96" x2="22.86" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="1"/>
-<label x="22.86" y="60.96" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="114.3" x2="233.68" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PB1(OC1A)"/>
-<label x="233.68" y="114.3" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="JP10" gate="G$1" pin="3"/>
-<wire x1="76.2" y1="78.74" x2="81.28" y2="78.74" width="0.1524" layer="91"/>
-<label x="81.28" y="78.74" size="1.27" layer="95" xref="yes"/>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="106.68" y1="124.46" x2="106.68" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="129.54" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="129.54" x2="101.6" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
+<pinref part="JP9" gate="G$1" pin="2"/>
+<wire x1="101.6" y1="124.46" x2="101.6" y2="129.54" width="0.1524" layer="91"/>
+<junction x="101.6" y="129.54"/>
 </segment>
 </net>
 <net name="TRIG" class="0">
 <segment>
-<wire x1="20.32" y1="63.5" x2="22.86" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="2"/>
-<label x="22.86" y="63.5" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="116.84" x2="233.68" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PB0(ICP)"/>
-<label x="233.68" y="116.84" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
 <pinref part="JP12" gate="G$1" pin="2"/>
 <wire x1="132.08" y1="114.3" x2="129.54" y2="114.3" width="0.1524" layer="91"/>
 <label x="129.54" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="127" x2="233.68" y2="127" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PD5(T1)"/>
+<label x="233.68" y="127" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="20.32" y1="71.12" x2="22.86" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="JP7" gate="G$1" pin="5"/>
+<label x="22.86" y="71.12" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="A5" class="0">
@@ -19002,7 +19004,7 @@ Source: http://www.osram.convergy.de/</description>
 <label x="7.62" y="12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="A3" class="0">
+<net name="IR" class="0">
 <segment>
 <wire x1="43.18" y1="78.74" x2="40.64" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="JP6" gate="G$1" pin="5"/>
@@ -19012,6 +19014,11 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="231.14" y1="154.94" x2="233.68" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PC3(ADC3)"/>
 <label x="233.68" y="154.94" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="OUT"/>
+<wire x1="58.42" y1="106.68" x2="55.88" y2="106.68" width="0.1524" layer="91"/>
+<label x="55.88" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="A2" class="0">
@@ -19026,75 +19033,7 @@ Source: http://www.osram.convergy.de/</description>
 <label x="233.68" y="157.48" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="A1" class="0">
-<segment>
-<wire x1="43.18" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="G$1" pin="7"/>
-<label x="40.64" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="160.02" x2="233.68" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PC1(ADC1)"/>
-<label x="233.68" y="160.02" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="A0" class="0">
-<segment>
-<wire x1="43.18" y1="71.12" x2="40.64" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="JP6" gate="G$1" pin="8"/>
-<label x="40.64" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="162.56" x2="233.68" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PC0(ADC0)"/>
-<label x="233.68" y="162.56" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="D2" class="0">
-<segment>
-<wire x1="20.32" y1="78.74" x2="22.86" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="8"/>
-<label x="22.86" y="78.74" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="134.62" x2="233.68" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PD2(INT0)"/>
-<label x="233.68" y="134.62" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U4" gate="G$1" pin="B"/>
-<wire x1="96.52" y1="111.76" x2="93.98" y2="111.76" width="0.1524" layer="91"/>
-<label x="93.98" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="D3" class="0">
-<segment>
-<wire x1="20.32" y1="76.2" x2="22.86" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="7"/>
-<label x="22.86" y="76.2" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="132.08" x2="233.68" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PD3(INT1)"/>
-<label x="233.68" y="132.08" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="OUT"/>
-<wire x1="58.42" y1="106.68" x2="55.88" y2="106.68" width="0.1524" layer="91"/>
-<label x="55.88" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="D4" class="0">
-<segment>
-<wire x1="20.32" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="6"/>
-<label x="22.86" y="73.66" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="129.54" x2="233.68" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PD4(XCK/T0)"/>
-<label x="233.68" y="129.54" size="1.27" layer="95" xref="yes"/>
-</segment>
+<net name="SWH" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="162.56" y1="76.2" x2="162.56" y2="68.58" width="0.1524" layer="91"/>
@@ -19102,22 +19041,22 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="162.56" y1="68.58" x2="157.48" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="S2" gate="G$1" pin="1"/>
 <junction x="162.56" y="68.58"/>
+<label x="165.1" y="76.2" size="1.27" layer="95" xref="yes"/>
 <wire x1="162.56" y1="76.2" x2="165.1" y2="76.2" width="0.1524" layer="91"/>
 <junction x="162.56" y="76.2"/>
-<label x="165.1" y="76.2" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="121.92" x2="233.68" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PD7(AIN1)"/>
+<label x="233.68" y="121.92" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP7" gate="G$1" pin="3"/>
+<wire x1="20.32" y1="66.04" x2="22.86" y2="66.04" width="0.1524" layer="91"/>
+<label x="22.86" y="66.04" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="D5" class="0">
-<segment>
-<wire x1="20.32" y1="71.12" x2="22.86" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="5"/>
-<label x="22.86" y="71.12" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="127" x2="233.68" y2="127" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PD5(T1)"/>
-<label x="233.68" y="127" size="1.27" layer="95" xref="yes"/>
-</segment>
+<net name="SWL" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="S3" gate="G$1" pin="1"/>
@@ -19125,12 +19064,10 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="LOW" gate="G$1" pin="2"/>
 <wire x1="203.2" y1="68.58" x2="198.12" y2="68.58" width="0.1524" layer="91"/>
 <junction x="203.2" y="68.58"/>
+<label x="205.74" y="76.2" size="1.27" layer="95" xref="yes"/>
 <wire x1="203.2" y1="76.2" x2="205.74" y2="76.2" width="0.1524" layer="91"/>
 <junction x="203.2" y="76.2"/>
-<label x="205.74" y="76.2" size="1.27" layer="95" xref="yes"/>
 </segment>
-</net>
-<net name="D6" class="0">
 <segment>
 <wire x1="20.32" y1="68.58" x2="22.86" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="JP7" gate="G$1" pin="4"/>
@@ -19144,19 +19081,19 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="ECHO" class="0">
 <segment>
-<wire x1="20.32" y1="66.04" x2="22.86" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="JP7" gate="G$1" pin="3"/>
-<label x="22.86" y="66.04" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="231.14" y1="121.92" x2="233.68" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PD7(AIN1)"/>
-<label x="233.68" y="121.92" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
 <pinref part="JP12" gate="G$1" pin="3"/>
 <wire x1="132.08" y1="111.76" x2="129.54" y2="111.76" width="0.1524" layer="91"/>
 <label x="129.54" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="129.54" x2="233.68" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PD4(XCK/T0)"/>
+<label x="233.68" y="129.54" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="20.32" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="JP7" gate="G$1" pin="6"/>
+<label x="22.86" y="73.66" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="D10" class="0">
@@ -19169,11 +19106,6 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="231.14" y1="111.76" x2="233.68" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PB2(SS/OC1B)"/>
 <label x="233.68" y="111.76" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="JP10" gate="G$1" pin="1"/>
-<wire x1="76.2" y1="73.66" x2="81.28" y2="73.66" width="0.1524" layer="91"/>
-<label x="81.28" y="73.66" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -19199,6 +19131,7 @@ Source: http://www.osram.convergy.de/</description>
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
 <label x="142.24" y="162.56" size="1.27" layer="95" rot="R180" xref="yes"/>
+<junction x="142.24" y="162.56"/>
 </segment>
 </net>
 <net name="RXI" class="0">
@@ -19258,6 +19191,103 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="JP9" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="119.38" x2="101.6" y2="121.92" width="0.1524" layer="91"/>
 <junction x="101.6" y="119.38"/>
+</segment>
+</net>
+<net name="SSRX" class="0">
+<segment>
+<pinref part="JP11" gate="G$1" pin="1"/>
+<wire x1="114.3" y1="81.28" x2="109.22" y2="81.28" width="0.1524" layer="91"/>
+<label x="109.22" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP7" gate="G$1" pin="2"/>
+<wire x1="20.32" y1="63.5" x2="22.86" y2="63.5" width="0.1524" layer="91"/>
+<label x="22.86" y="63.5" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="116.84" x2="233.68" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PB0(ICP)"/>
+<label x="233.68" y="116.84" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="SSTX" class="0">
+<segment>
+<pinref part="JP11" gate="G$1" pin="2"/>
+<wire x1="114.3" y1="78.74" x2="109.22" y2="78.74" width="0.1524" layer="91"/>
+<label x="109.22" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP7" gate="G$1" pin="1"/>
+<label x="22.86" y="60.96" size="1.27" layer="95" xref="yes"/>
+<wire x1="22.86" y1="60.96" x2="20.32" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="114.3" x2="233.68" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PB1(OC1A)"/>
+<label x="233.68" y="114.3" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="VALVE" class="0">
+<segment>
+<wire x1="231.14" y1="134.62" x2="233.68" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PD2(INT0)"/>
+<label x="233.68" y="134.62" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U4" gate="G$1" pin="B"/>
+<wire x1="96.52" y1="111.76" x2="93.98" y2="111.76" width="0.1524" layer="91"/>
+<label x="93.98" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="20.32" y1="78.74" x2="22.86" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="JP7" gate="G$1" pin="8"/>
+<label x="22.86" y="78.74" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="D3" class="0">
+<segment>
+<wire x1="231.14" y1="132.08" x2="233.68" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PD3(INT1)"/>
+<label x="233.68" y="132.08" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="20.32" y1="76.2" x2="22.86" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="JP7" gate="G$1" pin="7"/>
+<label x="22.86" y="76.2" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="GRN" class="0">
+<segment>
+<pinref part="JP10" gate="G$1" pin="1"/>
+<wire x1="76.2" y1="73.66" x2="81.28" y2="73.66" width="0.1524" layer="91"/>
+<label x="81.28" y="73.66" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="43.18" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="JP6" gate="G$1" pin="7"/>
+<label x="40.64" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="160.02" x2="233.68" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PC1(ADC1)"/>
+<label x="233.68" y="160.02" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="RED" class="0">
+<segment>
+<pinref part="JP10" gate="G$1" pin="3"/>
+<wire x1="76.2" y1="78.74" x2="81.28" y2="78.74" width="0.1524" layer="91"/>
+<label x="81.28" y="78.74" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="43.18" y1="71.12" x2="40.64" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="JP6" gate="G$1" pin="8"/>
+<label x="40.64" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="162.56" x2="233.68" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PC0(ADC0)"/>
+<label x="233.68" y="162.56" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
