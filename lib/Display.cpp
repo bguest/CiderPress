@@ -1,7 +1,8 @@
 #include "Display.h"
+#include "CiderPress.h"
 
 Display::Display(){
-  Serial7Segment = new SoftwareSerial(8,9);
+  Serial7Segment = new SoftwareSerial(DISPLAY_RX, DISPLAY_TX);
 }
 
 void Display::init(){

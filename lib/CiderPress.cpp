@@ -1,15 +1,13 @@
 #include "CiderPress.h"
 
-#define ECHO_PIN 3 // Echo Pin
-#define TRIG_PIN 4 // Trigger Pin
-#define LED_PIN 13 // Onboard LED
-
 void CiderPress::init(){
 
   pinMode(LED_PIN, OUTPUT);
 
   hc_sc04.init(ECHO_PIN, TRIG_PIN);
   display.init();
+  valve.init(VALVE_PIN, 30, 100);
+  indicator.init(RED_PIN, GREEN_PIN);
 }
 
 void CiderPress::run(){
@@ -18,8 +16,9 @@ void CiderPress::run(){
 
   if(hc_sc04.isSuccess){
     uint8_t distance = hc_sc04.cm();
-    //tap.setDistance(distance);
+    valve.setDistance(distance);
     display.setDistance(distance);
+    indicator.setDistance(distance, valve.highMark, valve.valveState());
   }
 
   delay(50);
