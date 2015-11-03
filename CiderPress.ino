@@ -1,5 +1,6 @@
 #include "Arduino.h"
 #include <SoftwareSerial.h>
+#include <IRremote.h>
 
 #include "CiderPress.h"
 CiderPress ciderPress;

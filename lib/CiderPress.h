@@ -1,7 +1,7 @@
 #ifndef CIDER_PRESS_H
 #define CIDER_PRESS_H
 
-#define IR_PIN 3
+#define IR_PIN A3
 #define ECHO_PIN 4 // Echo Pin
 #define TRIG_PIN 5 // Trigger Pin
 #define DISPLAY_RX 8
@@ -24,16 +24,27 @@
 #include "HC_SC04.h"
 #include "Valve.h"
 #include "Indicator.h"
+#include "IRremote.h" 
 
 class CiderPress{
+
   public:
+    CiderPress();
     void init();
     void run();
+
   private:
     HC_SC04 hc_sc04;
     Display display;
     Valve valve;
     Indicator indicator;
+    IRrecv *irrecv;
+
+    decode_results irResults;
+    uint8_t distance;
+
+    void handleIrCode(uint32_t irCode);
+
 };
 
 

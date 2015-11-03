@@ -11,7 +11,7 @@ void Valve::init(uint8_t valvePin, uint8_t high, uint8_t low){
 
 void Valve::setMode(uint8_t mode){
   _mode = mode;
-  if(_mode == VALVE_ON || _mode == VALVE_ON){
+  if(_mode == VALVE_ON || _mode == VALVE_OFF){
     _valveState = _mode;
     digitalWrite(_valvePin, _mode);
   }
