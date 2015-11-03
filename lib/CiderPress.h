@@ -11,6 +11,14 @@
 #define RED_PIN A0
 #define GREEN_PIN A1
 
+#define PLAY_PAUSE_IR 0x31F0E936
+#define MENUE_IR      0xD14F58B0
+#define UP_IR         0x17E1F858
+#define DOWN_IR       0x8EBB3CFC
+#define LEFT_IR       0xC26B4710
+#define RIGHT_IR      0xFA0E2992
+#define CENTER        0x133620BA
+
 #include "Arduino.h"
 #include "Display.h"
 #include "HC_SC04.h"
