@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -14330,7 +14330,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="C10" library="adafruit" deviceset="C-US" device="C0805" value="0.1uF"/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="GND26" library="SparkFun" deviceset="GND" device=""/>
-<part name="R11" library="adafruit" deviceset="R-US_" device="M0805" value="10K"/>
+<part name="R11" library="adafruit" deviceset="R-US_" device="M0805" value="300"/>
 <part name="LED1" library="adafruit" deviceset="LED" device="CHIPLED_0805" value="Red"/>
 <part name="GND28" library="SparkFun" deviceset="GND" device=""/>
 <part name="R2" library="adafruit" deviceset="R-US_" device="M0805" value="10K"/>
@@ -14339,7 +14339,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="GND1" library="SparkFun" deviceset="GND" device=""/>
 <part name="C1" library="adafruit" deviceset="C-US" device="C0805" value="0.1uF"/>
 <part name="GND7" library="SparkFun" deviceset="GND" device=""/>
-<part name="R6" library="adafruit" deviceset="R-US_" device="M0805" value="330"/>
+<part name="R6" library="adafruit" deviceset="R-US_" device="M0805" value="300"/>
 <part name="D3" library="adafruit" deviceset="LED" device="CHIPLED_0805" value="Green"/>
 <part name="GND8" library="SparkFun" deviceset="GND" device=""/>
 <part name="C19" library="SparkFun" deviceset="CAP_POL" device="1206" value="10uF"/>

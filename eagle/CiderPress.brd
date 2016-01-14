@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -1329,7 +1329,7 @@ design rules under a new name.</description>
 <element name="C10" library="adafruit" package="C0805" value="0.1uF" x="23.4442" y="25.3746" smashed="yes">
 <attribute name="VALUE" x="22.2123" y="26.4033" size="0.8128" layer="27"/>
 </element>
-<element name="R11" library="adafruit" package="M0805" value="10K" x="32.893" y="22.225" smashed="yes" rot="R180">
+<element name="R11" library="adafruit" package="M0805" value="300" x="32.893" y="22.225" smashed="yes" rot="R180">
 <attribute name="VALUE" x="35.179" y="21.082" size="0.8128" layer="27" rot="R180"/>
 </element>
 <element name="LED1" library="adafruit" package="CHIPLED_0805" value="Red" x="29.4894" y="24.5364" smashed="yes" rot="R270">
@@ -1344,7 +1344,7 @@ design rules under a new name.</description>
 <element name="C1" library="adafruit" package="C0805" value="0.1uF" x="16.7386" y="3.4544" smashed="yes" rot="R90">
 <attribute name="VALUE" x="15.5702" y="2.0447" size="0.8128" layer="27" rot="R90"/>
 </element>
-<element name="R6" library="adafruit" package="M0805" value="330" x="27.432" y="8.9662" smashed="yes" rot="R270">
+<element name="R6" library="adafruit" package="M0805" value="300" x="27.432" y="8.9662" smashed="yes" rot="R270">
 <attribute name="VALUE" x="29.4005" y="8.4333" size="0.8128" layer="27" rot="R90"/>
 </element>
 <element name="D3" library="adafruit" package="CHIPLED_0805" value="Green" x="27.305" y="4.2672" smashed="yes" rot="R180">
