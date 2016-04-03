@@ -46,27 +46,27 @@ void CiderPress::handleIrCode(uint32_t irCode){
   Serial.println(irCode, HEX);
 
   switch(irCode){
-    case PLAY_PAUSE_IR:
+    case PLAY_PAUSE_IR_0: case PLAY_PAUSE_IR_1:
       valve.setMode(VALVE_ON);
       indicator.blinkMillis(500);
       break;
-    case MENUE_IR:
+    case MENUE_IR_0: case MENUE_IR_1:
       valve.setMode(VALVE_OFF);
       indicator.blinkMillis(500);
       break;
-    case UP_IR:
+    case UP_IR_0: case UP_IR_1:
       valve.highMark = distance;
       indicator.blinkMillis(500);
       break;
-    case DOWN_IR:
+    case DOWN_IR_0: case DOWN_IR_1:
       valve.lowMark = distance;
       indicator.blinkMillis(500);
       break;
-    case LEFT_IR:
+    case LEFT_IR_0: case LEFT_IR_1:
       break;
-    case RIGHT_IR:
+    case RIGHT_IR_0: case RIGHT_IR_1:
       break;
-    case CENTER:
+    case CENTER_0: case CENTER_1:
       Serial.println("AUTO");
       indicator.blinkMillis(500);
       valve.setMode(VALVE_AUTOMATIC);
